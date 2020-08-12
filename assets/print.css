@@ -1,0 +1,38 @@
+.content
+{
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.table {
+    border-collapse: collapse;
+    width : 100%;
+    font-family: 'Open Sans';
+    color: #444; 
+}
+ 
+.table th{
+    background: #ecf0f1;
+    font-weight: normal;
+}
+ 
+.table, th, td {
+    text-align: center;
+    object-fit: cover;
+    border: 1px solid #0f4c75;
+}
+ 
+.table tr:nth-child(odd) {
+  background-color: #ecf0f1;
+}
+.table tr:nth-child(even) {
+  background-color: white;
+}
+.title{
+  text-align: center;
+  color :#0f4c75;
+  margin :0px;   
+}
