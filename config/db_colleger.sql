@@ -5,7 +5,7 @@
 -- Dumped from database version 12.3
 -- Dumped by pg_dump version 12.3
 
--- Started on 2020-08-13 15:03:12
+-- Started on 2020-08-13 16:13:20
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -208,7 +208,7 @@ ALTER TABLE ONLY public.tb_prodi
     ADD CONSTRAINT tb_prodi_pkey PRIMARY KEY (id_prodi);
 
 
--- Completed on 2020-08-13 15:03:14
+-- Completed on 2020-08-13 16:13:22
 
 --
 -- PostgreSQL database dump complete
