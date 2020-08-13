@@ -3,6 +3,7 @@ include('header.php');
 ?>
   <body>
     <div class="content">
+      <img src="./assets/logo.png" alt="Girl in a jacket" style="width: 80px; height: 80px; display: flex; padding:10px;">
       <h1 class="title">Data Mahasiswa</h1>
       <h2 class="title">Universitas Muhammadiyah Sukabumi</h2>
 

@@ -6,7 +6,7 @@ class Config{
       $dbname      = "dbname=db_colleger";                         
       $credentials = "user=postgres password=admin";
      
-      $db = pg_connect( "$host $port $dbname $credentials") or die ("Error : Unable to open database\n");
+      $db = pg_connect( "$host $port $dbname $credentials") or die ("Error : Unable to connect database\n");
       return $db;
    }
 }

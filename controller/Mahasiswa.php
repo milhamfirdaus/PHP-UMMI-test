@@ -1,5 +1,4 @@
 <?php
-
 //load dependencies
 include 'config/config.php';
 include_once('model/Mahasiswa_Model.php');
@@ -20,10 +19,12 @@ $lib = new Library();
             
             include('views/edit-mahasiswa.php');
         }
+
         else if (isset($_GET['add'])){
             $prodi = $model_prodi->get();
             include('views/tambah-mahasiswa.php');
         }
+
         else if (isset($_GET['print'])){
             $tahun = explode("-", $_POST["tahun_masuk"]);
             $select = "tb_mahasiswa.*,tb_prodi.*";
@@ -33,10 +34,10 @@ $lib = new Library();
             $date = date('d-m-yy');
 
             if($mahasiswa[0] == NULL){
-                echo "<script type='text/javascript'>
-                    alert('Tidak ada data yang dapat ditampilkan');
-                    window.location.href = 'index.php?controller=mahasiswa';
-                 </script>";
+                echo"<script type='text/javascript'>
+                        alert('Tidak ada data yang dapat ditampilkan');
+                        window.location.href = 'index.php?controller=mahasiswa';
+                    </script>";
             }
             else{
                 include('views/print.php');
@@ -61,10 +62,10 @@ $lib = new Library();
         
         $validate = $lib->validate($_POST);
         if ($validate != 'valid'){
-            echo "<script type='text/javascript'>
+            echo"<script type='text/javascript'>
                     alert('$validate');
                     window.location.href = 'index.php?controller=mahasiswa&add';
-                 </script>";
+                </script>";
         }
         else{
             $select = "id_prodi";
@@ -95,10 +96,10 @@ $lib = new Library();
         $validate = $lib->validate($_POST);
 
         if ($validate != 'valid'){
-            echo "<script type='text/javascript'>
+            echo"<script type='text/javascript'>
                     alert('$validate');
                     window.location.href = 'index.php?controller=mahasiswa&add';
-                 </script>";
+                </script>";
         }
         else{
             $tahun = explode("-", $_POST["tahun_masuk"]);
@@ -120,16 +121,16 @@ $lib = new Library();
 
             $response = $model_mahasiswa->create($data);
             if($response === true){
-               echo "<script type='text/javascript'>
+                echo"<script type='text/javascript'>
                         alert('Berhasil menyimpan data');
                         window.location.href='index.php?controller=mahasiswa';
-                     </script>";
+                    </script>";
             } 
             else{
-               echo "<script type='text/javascript'>
+                echo"<script type='text/javascript'>
                         alert('gagal menyimpan data');
                         window.location.href='index.php?controller=mahasiswa&create';
-                     </script>";
+                    </script>";
             }
         }
     }
@@ -139,15 +140,15 @@ $lib = new Library();
         $response = $model_mahasiswa->delete($where);
         if($response){
            echo "<script type='text/javascript'>
-                        alert('data dihapus');
-                        window.location.href='index.php?controller=mahasiswa';
-                     </script>";
+                    alert('data dihapus');
+                    window.location.href='index.php?controller=mahasiswa';
+                </script>";
         } 
         else {
            echo "<script type='text/javascript'>
                     alert('gagal menghapus data');
                     window.location.href = 'index.php?controller=mahasiswa';
-                 </script>";
+                </script>";
         }
     }
 
@@ -159,10 +160,10 @@ $lib = new Library();
         unset($_POST['nomor_urut']);
 
         if ($validate != 'valid'){
-            echo "<script type='text/javascript'>
+            echo"<script type='text/javascript'>
                     alert('$validate');
                     window.location.href = 'index.php?controller=mahasiswa&edit='.$id;
-                 </script>";
+                </script>";
         }
         else{
             $where_condition = array("id_mahasiswa" => $id);
@@ -183,16 +184,16 @@ $lib = new Library();
 
             $response =  $model_mahasiswa->update($data,$where_condition);
             if($response){
-                echo "<script type='text/javascript'>
-                    alert('Berhasil diubah');
-                    window.location.href = 'index.php?controller=mahasiswa';
-                 </script>";
+                echo"<script type='text/javascript'>
+                        alert('Berhasil diubah');
+                        window.location.href = 'index.php?controller=mahasiswa';
+                    </script>";
             }
             else{
-                echo "<script type='text/javascript'>
-                    alert('perintah gagal');
-                    window.location.href = 'index.php?controller=mahasiswa&edit='.$id;
-                 </script>";
+                echo"<script type='text/javascript'>
+                        alert('perintah gagal');
+                        window.location.href = 'index.php?controller=mahasiswa&edit='.$id;
+                    </script>";
             }
         }
     }
